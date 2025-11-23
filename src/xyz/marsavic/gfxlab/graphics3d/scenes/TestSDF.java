@@ -19,7 +19,7 @@ public class TestSDF extends Scene.Base {
 	public TestSDF() {
 		SDF s =
 //				cylinder(new Vec3(0,0,0), 0.4, 0.4);
-				pyramid(0.6);
+				torus(new Vec3(0,0,0), 0.4,0.15);
 		
 		Collection<Solid> solids = new ArrayList<>();
 		Collections.addAll(solids,

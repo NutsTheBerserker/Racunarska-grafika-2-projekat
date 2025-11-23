@@ -106,28 +106,11 @@ public interface SDF extends Solid {
 			return Math.min(Math.max(dxz, dy), 0) + Math.max(Math.max(dxz, dy), 0);
 		};
 	}
-	static SDF pyramid(double h) {
+	static SDF torus(Vec3 c, double R, double r) {
 		return p -> {
-			double m2 = h*h + 0.25;
-
-			Vec3 p1;
-			if(Math.abs(p.z()) > Math.abs(p.x())) {
-				p1 = new Vec3(Math.abs(p.z()) - 0.5, p.y(), Math.abs(p.x()) - 0.5);
-			} else {
-				p1 = new Vec3(Math.abs(p.x()) - 0.5, p.y(), Math.abs(p.z()) - 0.5);
-			}
-
-			Vec3 q = new Vec3(p1.z(), h*p1.y() - 0.5*p1.x(), h*p1.x() + 0.5*p1.y());
-
-			double s = Math.max(-q.x(), 0);
-			double t = Math.clamp((q.y()-0.5*p1.z())/(m2+0.25), 0 , 1);
-
-			double a = m2*(q.x()+s)*(q.x()+s) + q.y()*q.y();
-			double b = m2*(q.x()+0.5*t)*(q.x()+0.5*t) + (q.y()-m2*t)*(q.y()-m2*t);
-
-			double d2 = Math.min(q.y(),-q.x()*m2-q.y()*0.5) > 0.0 ? 0.0 : Math.min(a,b);
-
-			return Math.sqrt( (d2+q.z()*q.z())/m2 ) * Math.signum(Math.max(q.z(),-p1.y()));
+			Vec3 p1 = p.sub(c);
+			Vec3 q = new Vec3(new Vec3(p1.x(), 0, p1.z()).length() - R, p.y(), 0);
+			return q.length() - r;
 		};
-	}
+	};
 }
