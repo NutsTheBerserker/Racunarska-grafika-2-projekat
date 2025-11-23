@@ -17,11 +17,7 @@ import static xyz.marsavic.gfxlab.graphics3d.solids.SDF.*;
 public class TestSDF extends Scene.Base {
 	
 	public TestSDF() {
-		SDF s = smoothUnion(
-					ball(Vec3.xyz(-0.4, 0, 0), 0.3),
-					box(Vec3.EXYZ.mul(0.4)),
-					0.2
-				);
+		SDF s = cylinder(new Vec3(0,0,0), 0.4, 0.4);
 				
 		
 		Collection<Solid> solids = new ArrayList<>();
@@ -29,7 +25,7 @@ public class TestSDF extends Scene.Base {
 			s.transformed(Affine.IDENTITY
 					.then(Affine.scaling(1.8))
 					.then(Affine.rotationAboutX(-0.07))
-					.then(Affine.rotationAboutY(-0.1))
+//					.then(Affine.rotationAboutY(-0.1))
 			)
 		);
 		

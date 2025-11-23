@@ -1,5 +1,6 @@
 package xyz.marsavic.gfxlab.graphics3d.solids;
 
+import xyz.marsavic.geometry.Vec;
 import xyz.marsavic.geometry.Vector;
 import xyz.marsavic.gfxlab.Color;
 import xyz.marsavic.gfxlab.Vec3;
@@ -95,6 +96,14 @@ public interface SDF extends Solid {
 			double db = b.dist(p);
 			double k = Numeric.clamp((db - da) / r * 0.5 + 0.5);
 			return da * k + db * (1 - k) - k * (1 - k) * r;
+		};
+	}
+	static SDF cylinder(Vec3 c, double r, double h) {
+		return p -> {
+			Vec3 p1 = p.sub(c);
+			double dxz = Math.abs(new Vec3(p1.x(), 0, p1.z()).length()) - r;
+			double dy = Math.abs(p1.y()) - h;
+			return Math.min(Math.max(dxz, dy), 0) + Math.max(Math.max(dxz, dy), 0);
 		};
 	}
 }
