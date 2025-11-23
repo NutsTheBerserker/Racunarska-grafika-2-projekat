@@ -17,15 +17,15 @@ import static xyz.marsavic.gfxlab.graphics3d.solids.SDF.*;
 public class TestSDF extends Scene.Base {
 	
 	public TestSDF() {
-		SDF s = cylinder(new Vec3(0,0,0), 0.4, 0.4);
-				
+		SDF s =
+//				cylinder(new Vec3(0,0,0), 0.4, 0.4);
+				pyramid(0.6);
 		
 		Collection<Solid> solids = new ArrayList<>();
 		Collections.addAll(solids,
 			s.transformed(Affine.IDENTITY
 					.then(Affine.scaling(1.8))
 					.then(Affine.rotationAboutX(-0.07))
-//					.then(Affine.rotationAboutY(-0.1))
 			)
 		);
 		
