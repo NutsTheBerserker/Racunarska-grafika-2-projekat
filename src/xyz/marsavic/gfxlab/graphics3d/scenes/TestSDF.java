@@ -19,8 +19,9 @@ public class TestSDF extends Scene.Base {
 	public TestSDF() {
 		SDF s =
 //				cylinder(new Vec3(0,0,0), 0.4, 0.4);
-				torus(new Vec3(0,0,0), 0.4,0.15);
-		
+//				torus(new Vec3(0,0,0), 0.4,0.15);
+				capsule(new Vec3(0,0,0), 0.4,0.1);
+
 		Collection<Solid> solids = new ArrayList<>();
 		Collections.addAll(solids,
 			s.transformed(Affine.IDENTITY

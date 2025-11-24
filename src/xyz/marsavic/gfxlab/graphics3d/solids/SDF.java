@@ -113,4 +113,11 @@ public interface SDF extends Solid {
 			return q.length() - r;
 		};
 	};
+	static SDF capsule(Vec3 c, double h, double r) {
+		return p -> {
+			Vec3 p1 = p.sub(c);
+			p1 = new Vec3(p1.x(), p1.y() - Math.clamp(p.y(), 0, h), p1.z());
+			return p1.length() - r;
+		};
+	}
 }
