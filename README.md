@@ -1,5 +1,5 @@
 # GfxLab
-This is a version of the repositorium of professor Marko Savić that can be found at https://github.com/marsavic/GfxLab-2024-2025 that just adds 3 methods to the SDF Class. The methods themselves are taken from the article https://iquilezles.org/articles/distfunctions/ and adapted into Java.
+This is a copy of the repositorium of professor Marko Savić that can be found at https://github.com/marsavic/GfxLab-2024-2025 that just adds 3 methods to the SDF Class. The methods themselves are taken from the article https://iquilezles.org/articles/distfunctions/ and adapted into Java.
 
 ## Nameštanje
 
