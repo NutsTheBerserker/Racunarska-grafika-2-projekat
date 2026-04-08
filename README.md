@@ -1,5 +1,5 @@
 # GfxLab
-
+Ovo je modifikovana verzija repozitorijuma profesora Marka Savića na linku https://github.com/marsavic/GfxLab-2024-2025 napravljena iz potreba njegovog predmeta Računarska grafika 2.
 
 ## Nameštanje
 
