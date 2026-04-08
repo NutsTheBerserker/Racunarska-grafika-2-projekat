@@ -1,5 +1,5 @@
 # GfxLab
-Ovo je modifikovana verzija repozitorijuma profesora Marka Savića na linku https://github.com/marsavic/GfxLab-2024-2025 napravljena iz potreba njegovog predmeta Računarska grafika 2.
+This is a version of the repositorium of professor Marko Savić that can be found at https://github.com/marsavic/GfxLab-2024-2025 that just adds 3 methods to the SDF Class. The methods themselves are taken from the article https://iquilezles.org/articles/distfunctions/ and adapted into Java.
 
 ## Nameštanje
 
